@@ -1,3 +1,4 @@
+# Validate Credit cards
 module LuhnValidator
   # Validates credit card number using Luhn Algorithm
   # arguments: none
@@ -11,6 +12,6 @@ module LuhnValidator
       [(a * 2).divmod(10), b || 0]
     end.flatten.inject(:+)
 
-    check_number.zero? ? check_sum % 10 == 0 : (10 - check_sum % 10) == check_number
+    check_number.zero? ? (check_sum % 10).zero? : (10 - check_sum % 10) == check_number
   end
 end
