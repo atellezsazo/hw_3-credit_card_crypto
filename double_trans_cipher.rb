@@ -1,7 +1,8 @@
+# Double Transition Cipher
 module DoubleTranspositionCipher
   def self.encrypt(document, key)
     # TODO: FILL THIS IN!
-    ## Suggested steps for double transposition cipher
+    # Suggested steps for double transposition cipher
     # 1. find number of rows/cols such that matrix is almost square
     # 2. break plaintext into evenly sized blocks
     # 3. sort rows in predictibly random way using key as seed
