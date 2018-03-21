@@ -7,6 +7,8 @@ module SubstitutionCipher
     # Returns: String
     def self.encrypt(document, key)
       # TODO: encrypt string using caesar cipher
+      alphabet = (('A'..'Z').to_a + ('a'..'z').to_a).join
+      document.to_s.chars.map { |e| alphabet.include?(e) ? (e.ord + key).chr : e }.join
     end
 
     # Decrypts String document using integer key
@@ -17,7 +19,7 @@ module SubstitutionCipher
     def self.decrypt(document, key)
       # TODO: decrypt string using caesar cipher
       alphabet = (('A'..'Z').to_a + ('a'..'z').to_a).join
-      document.chars.map { |e| alphabet.include?(e) ? (e.ord + key).chr : e }.join
+      document.to_s.chars.map { |e| alphabet.include?(e) ? (e.ord - key).chr : e }.join
     end
   end
 
@@ -29,8 +31,6 @@ module SubstitutionCipher
     # Returns: String
     def self.encrypt(document, key)
       # TODO: encrypt string using a permutation cipher
-      alphabet = (('A'..'Z').to_a + ('a'..'z').to_a).join
-      document.chars.map { |e| alphabet.include?(e) ? (e.ord + key).chr : e }.join
     end
 
     # Decrypts String document using integer key
