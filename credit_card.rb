@@ -18,10 +18,10 @@ class CreditCard
   # returns json string
   def to_json
     {
-      number => @number,
-      expiration_date => @expiration_date,
-      owner => @owner,
-      credit_network => @credit_network
+      number: @number,
+      expiration_date: @expiration_date,
+      owner: @owner,
+      credit_network: @credit_network
     }.to_json
   end
 

@@ -16,16 +16,11 @@ describe 'Test card info encryption' do
    'SubstitutionCipher::Permutation',
    'DoubleTranspositionCipher'].each do |method|
     describe "Using #{method} " do
-      it 'should encrypt card information' do
+      it 'should encrypt/decrypt card information' do
         clazz = method.split('::').inject(Object) { |o, c| o.const_get c }
         enc = clazz.encrypt(@cc, @key)
         enc.wont_equal @cc.to_s
         enc.wont_be_nil
-      end
-
-      it 'should decrypt text' do
-        clazz = method.split('::').inject(Object) { |o, c| o.const_get c }
-        enc = clazz.encrypt(@cc, @key)
         dec = clazz.decrypt(enc, @key)
         dec.must_equal @cc.to_s
       end
