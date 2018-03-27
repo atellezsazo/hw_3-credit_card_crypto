@@ -15,13 +15,11 @@ module ModernSymmetricCipher
   end
 
   def self.decrypt(encrypted_cc, key)
-    begin
-      encrypted_cc = Base64.strict_decode64(encrypted_cc)
-      box = RbNaCl::SimpleBox.from_secret_key(key)
-      box.decrypt(encrypted_cc)
-    rescue Exception => e  
-      puts e.message  
-      puts e.backtrace.inspect  
-    end
+    encrypted_cc = Base64.strict_decode64(encrypted_cc)
+    box = RbNaCl::SimpleBox.from_secret_key(key)
+    box.decrypt(encrypted_cc)
+  rescue StandardError? => e
+    puts e.message
+    puts e.backtrace.inspect
   end
 end
