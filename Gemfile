@@ -2,4 +2,9 @@ source 'https://rubygems.org'
 
 gem 'json'
 gem 'minitest'
-# Add all the gems your code and tests use here!
+gem 'rbnacl'
+
+group :development do
+  gem 'guard' # NOTE: this is necessary in newer versions
+  gem 'guard-minitest'
+end
