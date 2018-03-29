@@ -49,7 +49,6 @@ describe 'Test cryptographic hashing' do
       cards.map do |cc|
         hash1 = cc.hash_secure
         hash2 = cc.hash_secure
-        (hash1 & hash2).wont_be_nil
         hash1.must_equal hash2
       end
     end
@@ -66,7 +65,6 @@ describe 'Test cryptographic hashing' do
       cards.map do |cc|
         hash1 = cc.hash
         hash2 = cc.hash_secure
-        (hash1 & hash2).wont_be_nil
         hash1.wont_be_same_as hash2
       end
     end
