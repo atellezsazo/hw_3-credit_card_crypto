@@ -1,3 +1,4 @@
+# module double transposition cipher
 module DoubleTranspositionCipher
   def self.encrypt(document, key)
     # TODO: FILL THIS IN!
